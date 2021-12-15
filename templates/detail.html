@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}{{post.title}}{% endblock %}
+{% block body %}
+<div class="container-fluid">
+	<!-- Left Album Info -->
+	<div class = "row">
+		<div class="col-sm-4 col-md-3">
+	            <div class="panel panel-default">
+	                <div class="panel-body">
+	                    <a href="{% url 'post:detail' post.title %}">
+	                        {% if post.main_img %}
+	                            <img src="{{ post.main_img.url }}" class="img-responsive">
+	                        {% else %}
+	                            <h3>No image to display</h3>
+	                        {% endif %}
+	                    </a>
+	                    <h1>{{ post.title }} <small></small></h1>
+	                    <h2>{{ post.cate }}</h2>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- Right Song Info -->
+	        <div class="col-sm-8 col-md-9">
+	            <div class="panel panel-default">
+	                <div class="panel-body">
+	                	<img class="img-responsive" src="{{post.main_img.url}}" >
+						<p class="font-weight-light">{{post.main_text}}</p>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div class="row">
+		<div class="col-12" id=#images>
+			<div class="panel panel-default">
+				<div class="panel-body" id = #img-pan>
+					<div class="row">
+						
+						{% for img in post.detail_set.all %}
+							<div class="col-3">
+							<img class="img-responsive" id = #images  src="{{ img.img1.url }}" >
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{%endblock%}

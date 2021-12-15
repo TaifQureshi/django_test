@@ -1,0 +1,27 @@
+body{
+    background: white url("background.png");
+}
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+}
+ul.errorlist {
+    padding-left: 0;
+}
+
+ul.errorlist > li {
+    list-style: none;
+}
+
+#img-pan{
+  align-content: center;
+}
+
+#images
+{
+  width: 300px;
+  height: 300px;
+} 
